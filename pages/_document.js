@@ -10,7 +10,7 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head />
-        <body className="font-poppins antialiased scroll-smooth bg-bgColor">
+        <body className="font-poppins antialiased scroll-smooth dark:bg-bgDarkColor bg-bgLightColor">
           <Main />
           <NextScript />
         </body>
