@@ -4,22 +4,23 @@ import Post from "../components//UI/Post";
 import CategoryCard from "../components/UI/CategoryCard";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import Tag from "../components//UI/Tag";
+import { getPosts } from "../lib";
 
-export default function Home() {
+export default function Home({ posts }) {
+  console.log(posts);
   return (
     <>
       <section className="lg:py-4 sm:py-2 py-1">
         <div className="max-w-6xl mx-auto lg:px-8 sm:px-6 px-4">
-          <PinnedPost />
+          <PinnedPost post={posts[0].node} />
         </div>
       </section>
       <section className="lg:py-4 sm:py-2 py-1 lg:mt-6 mt-4">
         <div className="max-w-6xl mx-auto lg:px-8 sm:px-6 px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            <Post />
-            <Post />
-            <Post />
-            <Post />
+            {posts.map((post, index) => {
+              return <Post post={post.node} key={index} />;
+            })}
           </div>
           <div className="dark:bg-bgGray bg-[#ECECEC] mt-10 text-center py-6 px-4">
             <button
@@ -103,4 +104,13 @@ export default function Home() {
       </section>
     </>
   );
+}
+
+export async function getStaticProps() {
+  const posts = (await getPosts()) || [];
+  return {
+    props: {
+      posts,
+    },
+  };
 }
