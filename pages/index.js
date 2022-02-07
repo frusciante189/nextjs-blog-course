@@ -4,10 +4,21 @@ import Post from "../components//UI/Post";
 import CategoryCard from "../components/UI/CategoryCard";
 import { ChevronRightIcon } from "@heroicons/react/outline";
 import Tag from "../components//UI/Tag";
-import { getPosts } from "../lib";
+import {
+  getAuthors,
+  getCategories,
+  getPosts,
+  getTechCategory,
+  getWorkCategory,
+} from "../lib";
 
-export default function Home({ posts }) {
-  console.log(posts);
+export default function Home({
+  posts,
+  techCategory,
+  workCategory,
+  categories,
+  authors,
+}) {
   return (
     <>
       <section className="lg:py-4 sm:py-2 py-1">
@@ -39,29 +50,27 @@ export default function Home({ posts }) {
             <div>
               <div className="flex items-center space-x-1.5 border-b-2 pb-1.5 border-b-bgDarkColor dark:border-b-neutral-600 cursor-pointer group">
                 <h1 className="text-xs dark:text-white text-darkText font-semibold uppercase dark:group-hover:text-darkBrand group-hover:text-lightBrand transition-colors transform duration-300 ease-in-out">
-                  Work
+                  Tech
                 </h1>
                 <ChevronRightIcon className="w-5 h-5 dark:group-hover:text-darkBrand group-hover:text-lightBrand transition-colors transform duration-300 ease-in-out dark:text-white text-darkText" />
               </div>
               <div className="mt-6 lg:space-y-5 md:space-y-4 space-y-3">
-                <CategoryCard />
-                <CategoryCard />
-                <CategoryCard />
-                <CategoryCard />
+                {techCategory.map((post, index) => {
+                  return <CategoryCard post={post.node} key={index} />;
+                })}
               </div>
             </div>
             <div>
               <div className="flex items-center space-x-1.5 border-b-2 pb-1.5 border-b-bgDarkColor dark:border-b-neutral-600 cursor-pointer group">
                 <h1 className="text-xs dark:text-white text-darkText font-semibold uppercase dark:group-hover:text-darkBrand group-hover:text-lightBrand transition-colors transform duration-300 ease-in-out">
-                  Lifestyle
+                  Work
                 </h1>
                 <ChevronRightIcon className="w-5 h-5 dark:group-hover:text-darkBrand group-hover:text-lightBrand transition-colors transform duration-300 ease-in-out dark:text-white text-darkText" />
               </div>
               <div className="mt-6 lg:space-y-5 md:space-y-4 space-y-3">
-                <CategoryCard />
-                <CategoryCard />
-                <CategoryCard />
-                <CategoryCard />
+                {workCategory.map((post, index) => {
+                  return <CategoryCard post={post.node} key={index} />;
+                })}
               </div>
             </div>
           </div>
@@ -77,10 +86,9 @@ export default function Home({ posts }) {
               <ChevronRightIcon className="w-5 h-5 dark:group-hover:text-darkBrand group-hover:text-lightBrand transition-colors transform duration-300 ease-in-out dark:text-white text-darkText" />
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
-              <Tag />
-              <Tag />
-              <Tag />
-              <Tag />
+              {categories.map((category, index) => {
+                return <Tag category={category} key={index} />;
+              })}
             </div>
           </div>
         </div>
@@ -95,9 +103,9 @@ export default function Home({ posts }) {
               <ChevronRightIcon className="w-5 h-5 dark:group-hover:text-darkBrand group-hover:text-lightBrand transition-colors transform duration-300 ease-in-out dark:text-white text-darkText" />
             </div>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-10 gap-y-5">
-              <Authors />
-              <Authors />
-              <Authors />
+              {authors.map((author, index) => {
+                return <Authors author={author} key={index} />;
+              })}
             </div>
           </div>
         </div>
@@ -108,9 +116,18 @@ export default function Home({ posts }) {
 
 export async function getStaticProps() {
   const posts = (await getPosts()) || [];
+  const techCategory = (await getTechCategory()) || [];
+  const workCategory = (await getWorkCategory()) || [];
+  const categories = (await getCategories()) || [];
+  const authors = (await getAuthors()) || [];
+
   return {
     props: {
       posts,
+      techCategory,
+      workCategory,
+      categories,
+      authors,
     },
   };
 }
