@@ -4,7 +4,7 @@ import React from "react";
 const Tag = ({ category }) => {
   return (
     <div
-      className="relative after:absolute after:w-full after:h-full after:top-0 
+      className="relative after:absolute after:w-full after:h-full after:top-0
     after:left-0 after:bg-black after:opacity-0 after:transition-all 
     after:duration-500 after:transform after:ease-in-out hover:after:opacity-10"
     >

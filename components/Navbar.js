@@ -8,8 +8,8 @@ import Darkmode from "./UI/Darkmode";
 const Navbar = () => {
   return (
     <header className="lg:py-10 sm:py-8 py-6 text-white">
-      <section className="max-w-6xl mx-auto lg:px-8 sm:px-6 px-4">
-        <div className="flex justify-between items-center">
+      <section className="max-w-6xl mx-auto lg:px-8 sm:px-6 px-4 ">
+        <div className="flex justify-between items-center border-b lg:pb-8 pb-4 border-bgGray">
           <Link href="/">
             <h1 className="text-4xl cursor-pointer font-semibold tracking-wide dark:text-white text-darkText">
               Frus

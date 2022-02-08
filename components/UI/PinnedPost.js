@@ -6,7 +6,7 @@ import React from "react";
 const PinnedPost = ({ post }) => {
   return (
     <div className="flex sm:flex-row flex-col relative pattern group sm:max-h-[400px] md:max-h-max overflow-hidden">
-      <Link href={`./post/${post.slug}`}>
+      <Link href={`./posts/${post.slug}`}>
         <div className="relative md:aspect-video aspect-square sm:w-3/4 w-full">
           <Image
             src={post.featuredImage.url}
@@ -16,7 +16,7 @@ const PinnedPost = ({ post }) => {
           />
         </div>
       </Link>
-      <Link href={`./post/${post.slug}`}>
+      <Link href={`./posts/${post.slug}`}>
         <div
           className="sm:absolute md:top-1/3 top-[30%] right-10 dark:bg-bgGray bg-white dark:text-white text-darkText lg:p-8 sm:p-6 p-4
       shadow-[8px_8px_0] dark:shadow-bgGray shadow-[#ECECEC] space-y-2
