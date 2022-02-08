@@ -11,6 +11,7 @@ import {
   getTechCategory,
   getWorkCategory,
 } from "../lib";
+import Link from "next/link";
 
 export default function Home({
   posts,
@@ -49,10 +50,14 @@ export default function Home({
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-10">
             <div>
               <div className="flex items-center space-x-1.5 border-b-2 pb-1.5 border-b-bgDarkColor dark:border-b-neutral-600 cursor-pointer group">
-                <h1 className="text-xs dark:text-white text-darkText font-semibold uppercase dark:group-hover:text-darkBrand group-hover:text-lightBrand transition-colors transform duration-300 ease-in-out">
-                  Tech
-                </h1>
-                <ChevronRightIcon className="w-5 h-5 dark:group-hover:text-darkBrand group-hover:text-lightBrand transition-colors transform duration-300 ease-in-out dark:text-white text-darkText" />
+                <Link href="./category/tech">
+                  <div>
+                    <h1 className="text-xs inline-block dark:text-white text-darkText font-semibold uppercase dark:group-hover:text-darkBrand group-hover:text-lightBrand transition-colors transform duration-300 ease-in-out">
+                      Tech
+                    </h1>
+                    <ChevronRightIcon className="w-5 h-5 inline-block dark:group-hover:text-darkBrand group-hover:text-lightBrand transition-colors transform duration-300 ease-in-out dark:text-white text-darkText" />
+                  </div>
+                </Link>
               </div>
               <div className="mt-6 lg:space-y-5 md:space-y-4 space-y-3">
                 {techCategory.map((post, index) => {
@@ -62,10 +67,14 @@ export default function Home({
             </div>
             <div>
               <div className="flex items-center space-x-1.5 border-b-2 pb-1.5 border-b-bgDarkColor dark:border-b-neutral-600 cursor-pointer group">
-                <h1 className="text-xs dark:text-white text-darkText font-semibold uppercase dark:group-hover:text-darkBrand group-hover:text-lightBrand transition-colors transform duration-300 ease-in-out">
-                  Work
-                </h1>
-                <ChevronRightIcon className="w-5 h-5 dark:group-hover:text-darkBrand group-hover:text-lightBrand transition-colors transform duration-300 ease-in-out dark:text-white text-darkText" />
+                <Link href="./category/work">
+                  <div>
+                    <h1 className="text-xs dark:text-white inline-block text-darkText font-semibold uppercase dark:group-hover:text-darkBrand group-hover:text-lightBrand transition-colors transform duration-300 ease-in-out">
+                      Work
+                    </h1>
+                    <ChevronRightIcon className="w-5 h-5 inline-block dark:group-hover:text-darkBrand group-hover:text-lightBrand transition-colors transform duration-300 ease-in-out dark:text-white text-darkText" />
+                  </div>
+                </Link>
               </div>
               <div className="mt-6 lg:space-y-5 md:space-y-4 space-y-3">
                 {workCategory.map((post, index) => {

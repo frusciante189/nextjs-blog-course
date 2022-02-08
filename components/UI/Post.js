@@ -16,15 +16,17 @@ const Post = ({ post }) => {
           />
         </div>
       </Link>
-      <div className="dark:bg-bgGray bg-white dark:text-white text-darkText lg:p-8 sm:p-6 p-4 space-y-2">
-        <h1 className="dark:group-hover:text-darkBrand group-hover:text-lightBrand xl:text-2xl sm:text-xl text-lg font-bold">
-          {post.title}
-        </h1>
-        <div className="uppercase text-xs tracking-wider flex space-x-2 font-medium dark:text-darkGray text-darkText">
-          <h1 className="">{post.authors[0].name}</h1>
-          <span>{moment(post.createdAt).format("DD MMM YYYY")}</span>
+      <Link href={`./posts/${post.slug}`}>
+        <div className="dark:bg-bgGray bg-white dark:text-white text-darkText lg:p-8 sm:p-6 p-4 space-y-2">
+          <h1 className="dark:group-hover:text-darkBrand group-hover:text-lightBrand xl:text-2xl sm:text-xl text-lg font-bold">
+            {post.title}
+          </h1>
+          <div className="uppercase text-xs tracking-wider flex space-x-2 font-medium dark:text-darkGray text-darkText">
+            <h1 className="">{post.authors[0].name}</h1>
+            <span>{moment(post.createdAt).format("DD MMM YYYY")}</span>
+          </div>
         </div>
-      </div>
+      </Link>
     </div>
   );
 };
