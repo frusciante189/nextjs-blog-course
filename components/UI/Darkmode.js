@@ -19,9 +19,15 @@ const Darkmode = () => {
       transition-all transform duration-300 ease-in-out"
     >
       {theme === "light" ? (
-        <MoonIcon className="w-5 h-5" />
+        <>
+          <MoonIcon className="w-5 h-5" />
+          <span className="sr-only">Moon Icon</span>
+        </>
       ) : (
-        <SunIcon className="w-5 h-5" />
+        <>
+          <SunIcon className="w-5 h-5" />
+          <span className="sr-only">Sun Icon</span>
+        </>
       )}
     </button>
   );
