@@ -7,7 +7,7 @@ const CategoryDetails = ({ posts }) => {
     <div className="max-w-6xl mx-auto lg:px-8 sm:px-6 px-4">
       <div>
         <h1 className="text-center font-bold dark:text-white text-darkText text-3xl">
-          {posts[0].categories[0].name}
+          {posts.name}
         </h1>
         <p className="text-center text-lg dark:text-white text-darkText mt-5 max-w-xl mx-auto">
           The origin of the word "travel" is most likely lost to history. The
@@ -15,7 +15,7 @@ const CategoryDetails = ({ posts }) => {
           Wikipedia
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 py-10">
-          {posts.map((post, index) => {
+          {posts.post.map((post, index) => {
             return <Post post={post} key={index} />;
           })}
         </div>

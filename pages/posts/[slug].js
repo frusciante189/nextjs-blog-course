@@ -14,7 +14,6 @@ import {
 } from "react-icons/fa";
 
 const PostDetails = ({ post }) => {
-  console.log(post);
   return (
     <div className="min-h-screen">
       <div className="max-w-6xl mx-auto lg:px-8 sm:px-6 px-4">
