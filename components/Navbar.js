@@ -50,6 +50,7 @@ const Navbar = ({ isOpen, setIsOpen }) => {
               <Darkmode />
               <button className="cursor-pointer dark:text-white dark:border-white text-darkText border-darkText">
                 <SearchIcon className="w-4 h-4" />
+                <span className="sr-only">Search Icon</span>
               </button>
             </nav>
             <button
@@ -57,6 +58,7 @@ const Navbar = ({ isOpen, setIsOpen }) => {
               onClick={() => setIsOpen(true)}
             >
               <MenuIcon className="w-8 h-8" />
+              <span className="sr-only">Menu Icon</span>
             </button>
           </div>
           {/* Mobile Menu  */}
@@ -87,12 +89,14 @@ const Navbar = ({ isOpen, setIsOpen }) => {
               <Darkmode />
               <button className="cursor-pointer dark:text-white dark:border-white text-darkText border-darkText">
                 <SearchIcon className="w-4 h-4" />
+                <span className="sr-only">Search Icon</span>
               </button>
               <button
                 className="absolute top-0 right-0 pr-5 dark:text-white text-darkText"
                 onClick={() => setIsOpen(false)}
               >
                 <XIcon className="w-8 h-8" />
+                <span className="sr-only">Close Icon</span>
               </button>
             </nav>
           </div>
