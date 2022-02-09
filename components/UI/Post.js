@@ -6,7 +6,7 @@ import React from "react";
 const Post = ({ post }) => {
   return (
     <div className="flex flex-col group overflow-hidden cursor-pointer">
-      <Link href={`./posts/${post.slug}`}>
+      <Link href={`/posts/${post.slug}`}>
         <div className="lg:aspect-[6/7] aspect-square relative">
           <Image
             src={post.featuredImage.url}
@@ -16,7 +16,7 @@ const Post = ({ post }) => {
           />
         </div>
       </Link>
-      <Link href={`./posts/${post.slug}`}>
+      <Link href={`/posts/${post.slug}`}>
         <div className="dark:bg-bgGray bg-white dark:text-white text-darkText lg:p-8 sm:p-6 p-4 space-y-2">
           <h1 className="dark:group-hover:text-darkBrand group-hover:text-lightBrand xl:text-2xl sm:text-xl text-lg font-bold">
             {post.title}
