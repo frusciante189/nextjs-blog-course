@@ -14,6 +14,7 @@ const PinnedPost = ({ post }) => {
             objectFit="cover"
             className="group-hover:scale-105 transition-all transform duration-500 ease-in-out cursor-pointer"
             alt={post.title}
+            priority
           />
         </div>
       </Link>
