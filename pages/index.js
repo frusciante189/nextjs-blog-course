@@ -30,7 +30,7 @@ export default function Home({
       <section className="lg:py-4 sm:py-2 py-1 lg:mt-6 mt-4">
         <div className="max-w-6xl mx-auto lg:px-8 sm:px-6 px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
-            {posts.map((post, index) => {
+            {posts.slice(1).map((post, index) => {
               return <Post post={post.node} key={index} />;
             })}
           </div>
