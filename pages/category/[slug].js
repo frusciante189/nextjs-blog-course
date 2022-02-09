@@ -10,9 +10,8 @@ const CategoryDetails = ({ posts }) => {
           {posts.name}
         </h1>
         <p className="text-center text-lg dark:text-white text-darkText mt-5 max-w-xl mx-auto">
-          The origin of the word "travel" is most likely lost to history. The
-          term "travel" may originate from the Old French word travail.
-          Wikipedia
+          The origin of the word travel is most likely lost to history. The term
+          travel may originate from the Old French word travail. Wikipedia
         </p>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10 py-10">
           {posts.post.map((post, index) => {
