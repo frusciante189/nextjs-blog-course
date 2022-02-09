@@ -21,6 +21,7 @@ const CategoryCard = ({ post }) => {
             width={88}
             height={72}
             objectFit="cover"
+            alt={post.title}
           />
         </div>
       </div>

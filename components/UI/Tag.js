@@ -16,6 +16,7 @@ const Tag = ({ category }) => {
             layout="fill"
             objectFit="cover"
             className=""
+            alt={category.name}
           />
         </div>
         <div className="absolute bottom-0 p-4 sm:p-3 lg:p-2 left-0 text-white font-semibold">

@@ -16,6 +16,7 @@ const AuthorDetails = ({ posts }) => {
           height={88}
           objectFit="cover"
           className="rounded-full"
+          alt={posts.name}
         />
         <h1 className="text-center font-bold dark:text-white text-darkText text-3xl mt-1">
           {posts.name}

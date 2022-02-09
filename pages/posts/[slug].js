@@ -26,6 +26,7 @@ const PostDetails = ({ post }) => {
                   layout="fill"
                   objectFit="cover"
                   className="group-hover:scale-105 transition-all transform duration-500 ease-in-out cursor-pointer"
+                  alt={post.title}
                 />
               </div>
             </Link>

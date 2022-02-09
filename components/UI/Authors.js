@@ -11,7 +11,7 @@ const Authors = ({ author }) => {
             src={author.photo.url}
             layout="fill"
             objectFit="cover"
-            alt="John Frusciante"
+            alt={author.name}
           />
         </div>
         <div className="flex-1">

@@ -13,6 +13,7 @@ const Post = ({ post }) => {
             layout="fill"
             objectFit="cover"
             className="group-hover:scale-105 transition-all tranform duration-500 ease-in-out"
+            alt={post.title}
           />
         </div>
       </Link>
