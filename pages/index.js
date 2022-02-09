@@ -138,5 +138,6 @@ export async function getStaticProps() {
       categories,
       authors,
     },
+    revalidate: 30,
   };
 }
